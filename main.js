@@ -12,6 +12,9 @@ function req(C_from, C_to){
         console.log(fromto);
         let rate = data[fromto];
         try{
+            document.getElementById("_3rd_h1").style.color = "white";
+            document.getElementById("_1st_h1").style.color = "white";
+
             _1st_h1.innerHTML = `1${C_from}`;
             _2nd_h1.innerHTML = "is";
             _3rd_h1.innerHTML = `${rate.toFixed(3)}${C_to}`;
@@ -22,15 +25,20 @@ function req(C_from, C_to){
             let _3rd_h1_element_value = parseFloat(_3rd_h1.innerHTML);
             console.log(_1st_h1_element_value, ",", _3rd_h1_element_value);
             
+            function formula(_x_h1_element_value){
+                console.log(-255/499*_x_h1_element_value+(255+255/499));
+                return -255/499*_x_h1_element_value+(255+255/499);
+            }
+
             if(_1st_h1_element_value > _3rd_h1_element_value){
                 console.log("in1");
                 console.log(_3rd_h1);
-                document.getElementById("_1st_h1").style.color = `rgba(255, ${col_minus*(1/parseFloat(_3rd_h1_element_value))}, ${col_minus*(1/_3rd_h1_element_value)}, 1)`;
+                document.getElementById("_1st_h1").style.color = `rgba(255, ${parseFloat(formula(_1st_h1_element_value))}, ${parseFloat(formula(_1st_h1_element_value))}, 1)`;
                 console.log("fin");
             }
             else{
                 console.log("in2");
-                document.getElementById("_3rd_h1").style.color = `rgba(255, ${col_minus*(1/parseFloat(_3rd_h1_element_value))}, ${col_minus*(1/_3rd_h1_element_value)}, 1)`;
+                document.getElementById("_3rd_h1").style.color = `rgba(255, ${parseFloat(formula(_3rd_h1_element_value))}, ${parseFloat(formula(_3rd_h1_element_value))}, 1)`;
                 console.log("fin");
             }
 
