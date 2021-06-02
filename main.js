@@ -25,20 +25,25 @@ function req(C_from, C_to){
             let _3rd_h1_element_value = parseFloat(_3rd_h1.innerHTML);
             console.log(_1st_h1_element_value, ",", _3rd_h1_element_value);
             
-            function formula(_x_h1_element_value){
+            function oneplus_formula(_x_h1_element_value){
                 console.log(-255/499*_x_h1_element_value+(255+255/499));
                 return -255/499*_x_h1_element_value+(255+255/499);
+            }
+
+            function oneminus_formula(_x_h1_element_value){
+                console.log(-51000*_x_h1_element_value+255);
+                return -51000*_x_h1_element_value+255;
             }
 
             if(_1st_h1_element_value > _3rd_h1_element_value){
                 console.log("in1");
                 console.log(_3rd_h1);
-                document.getElementById("_1st_h1").style.color = `rgba(255, ${parseFloat(formula(_1st_h1_element_value))}, ${parseFloat(formula(_1st_h1_element_value))}, 1)`;
+                document.getElementById("_1st_h1").style.color = `rgba(255, ${parseFloat(oneminus_formula(_1st_h1_element_value))}, ${parseFloat(oneminus_formula(_1st_h1_element_value))}, 1)`;
                 console.log("fin");
             }
             else{
                 console.log("in2");
-                document.getElementById("_3rd_h1").style.color = `rgba(255, ${parseFloat(formula(_3rd_h1_element_value))}, ${parseFloat(formula(_3rd_h1_element_value))}, 1)`;
+                document.getElementById("_3rd_h1").style.color = `rgba(255, ${parseFloat(oneplus_formula(_3rd_h1_element_value))}, ${parseFloat(oneplus_formula(_3rd_h1_element_value))}, 1)`;
                 console.log("fin");
             }
 
