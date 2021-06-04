@@ -32,8 +32,8 @@ function req(C_from, C_to){
             }
 
             function oneminus_formula(_x_h1_element_value){
-                console.log(-51000*_x_h1_element_value+255);
-                return (-51000*_x_h1_element_value+255);
+                console.log(255.511*_x_h1_element_value-0.511);
+                return (255.511*_x_h1_element_value-0.511);
             }
 
             if(_1st_h1_element_value > _3rd_h1_element_value){
