@@ -27,8 +27,8 @@ function req(C_from, C_to){
             
             function oneplus_formula(_x_h1_element_value){
                 console.log(-255/499*_x_h1_element_value+(255+255/499));
-                console.log(-51*_x_h1_element_value+255);
-                return (-51*_x_h1_element_value+255);
+                console.log(-255/499*_x_h1_element_value+(255+255/499));
+                return (-255/499*_x_h1_element_value+(255+255/499));
             }
 
             function oneminus_formula(_x_h1_element_value){
