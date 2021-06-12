@@ -27,11 +27,11 @@ function req(C_from, C_to, value){
             console.log(_1st_h1_element_value, ",", _3rd_h1_element_value);
             
             function oneplus_formula(_x_h1_element_value){
-                return (-255/499*_x_h1_element_value/value+(255+255/499));
+                return (-255/499*(_x_h1_element_value/value)+(255+255/499));
             }
 
             function oneminus_formula(_x_h1_element_value){
-                return (255.511*_x_h1_element_value/value-0.511);
+                return (255.511*(_x_h1_element_value/value)-0.511);
             }
 
             if(_1st_h1_element_value > _3rd_h1_element_value){
