@@ -2,7 +2,7 @@ const _1st_h1 = document.querySelector("#_1st_h1");
 const _2nd_h1 = document.querySelector("#_2nd_h1");
 const _3rd_h1 = document.querySelector("#_3rd_h1");
 
-function req(C_from, C_to){
+function req(C_from, C_to, value){
     fetch(`https://free.currconv.com/api/v7/convert?q=${C_from}_${C_to}&compact=ultra&apiKey=b17c099b916d2b02dfd5`)
     .then(function(response){
         return data = response.json();
@@ -10,14 +10,15 @@ function req(C_from, C_to){
     .then(function(data){
         let fromto = `${C_from}_${C_to}`;
         console.log(fromto);
+        console.log(data);
         let rate = data[fromto];
         try{
             document.getElementById("_3rd_h1").style.color = "white";
             document.getElementById("_1st_h1").style.color = "white";
 
-            _1st_h1.innerHTML = `1${C_from}`;
+            _1st_h1.innerHTML = `${value}${C_from}`;
             _2nd_h1.innerHTML = "is";
-            _3rd_h1.innerHTML = `${rate.toFixed(3)}${C_to}`;
+            _3rd_h1.innerHTML = `${(rate * value).toFixed(3)}${C_to}`;
 
             let col_minus = 255;
 
@@ -26,13 +27,10 @@ function req(C_from, C_to){
             console.log(_1st_h1_element_value, ",", _3rd_h1_element_value);
             
             function oneplus_formula(_x_h1_element_value){
-                console.log(-255/499*_x_h1_element_value+(255+255/499));
-                console.log(-255/499*_x_h1_element_value+(255+255/499));
                 return (-255/499*_x_h1_element_value+(255+255/499));
             }
 
             function oneminus_formula(_x_h1_element_value){
-                console.log(255.511*_x_h1_element_value-0.511);
                 return (255.511*_x_h1_element_value-0.511);
             }
 
@@ -68,8 +66,13 @@ function req(C_from, C_to){
 }
 
 document.querySelector("#update_btn").onclick = function(){
-    let val1 = document.querySelector("#input_field_txt_1").value.toUpperCase();
-    let val2 = document.querySelector("#input_field_txt_2").value.toUpperCase();
-    req(val1, val2);
+    let curr1 = document.querySelector("#input_field_txt_1").value.toUpperCase();
+    let curr2 = document.querySelector("#input_field_txt_2").value.toUpperCase();
+    let value = document.querySelector("#input_field_curr_value").value;
+    if(value == ""){
+        value = 1
+        console.log(value);
+    }
+    req(curr1, curr2, value);
     //document.querySelector("#update_btn").style = "color:red;";
 }
