@@ -27,26 +27,29 @@ function req(C_from, C_to, value){
             console.log(_1st_h1_element_value, ",", _3rd_h1_element_value);
             
             function oneplus_formula(_x_h1_element_value){
-                return (-255/499*(_x_h1_element_value/value)+(255+255/499));
+                console.log(_x_h1_element_value);
+                console.log(_x_h1_element_value/value);
+                console.log(rate);
+                console.log((_x_h1_element_value/value).toFixed(3));
+                return (-255/499*(_x_h1_element_value/value).toFixed(3)+(255+255/499));
             }
 
             function oneminus_formula(_x_h1_element_value){
-                return (255.511*(_x_h1_element_value/value)-0.511);
+                console.log(_x_h1_element_value);
+                console.log(_x_h1_element_value/value);
+                console.log(rate);
+                console.log((_x_h1_element_value/value).toFixed(3));
+                return (260.2040816326531*(_x_h1_element_value/value).toFixed(3)-5.2040816326531);
             }
 
-            if(_1st_h1_element_value > _3rd_h1_element_value){
+            if(1 > _3rd_h1_element_value){
                 console.log("in1");
-                console.log(_3rd_h1);
                 document.getElementById("_1st_h1").style.color = `rgba(255, ${parseFloat(oneminus_formula(_3rd_h1_element_value))}, ${parseFloat(oneminus_formula(_3rd_h1_element_value))}, 1)`;
-                console.log("fin");
             }
             else{
                 console.log("in2");
                 document.getElementById("_3rd_h1").style.color = `rgba(255, ${parseFloat(oneplus_formula(_3rd_h1_element_value))}, ${parseFloat(oneplus_formula(_3rd_h1_element_value))}, 1)`;
-                console.log("fin");
             }
-
-            console.log(_1st_h1, ",", _3rd_h1);
 
             /*document.querySelectorAll("h1").forEach(function (h1_element){
                 let h1_element_value = parseFloat(h1_element.innerHTML);
@@ -71,7 +74,6 @@ document.querySelector("#update_btn").onclick = function(){
     let value = document.querySelector("#input_field_curr_value").value;
     if(value == ""){
         value = 1
-        console.log(value);
     }
     req(curr1, curr2, value);
     //document.querySelector("#update_btn").style = "color:red;";
