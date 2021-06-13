@@ -34,14 +34,14 @@ function req(C_from, C_to, value){
                 return (-255/499*(_x_h1_element_value).toFixed(3)+(255+255/499));
             }
 
-            if(1 > _3rd_h1_element_value){
-                //console.log("in1");
-                //console.log(rate, _3rd_h1_element_value);
+            if(1 > rate){
+                console.log("in1");
+                console.log(rate, _3rd_h1_element_value);
                 document.getElementById("_1st_h1").style.color = `rgba(255, ${parseFloat(oneminus_formula(1/rate))}, ${parseFloat(oneminus_formula(1/rate))}, 1)`;
             }
             else{
-                //console.log("in2");
-                //console.log(rate, _3rd_h1_element_value);
+                console.log("in2");
+                console.log(rate, _3rd_h1_element_value);
                 document.getElementById("_3rd_h1").style.color = `rgba(255, ${parseFloat(oneplus_formula(rate))}, ${parseFloat(oneplus_formula(rate))}, 1)`;
             }
 
