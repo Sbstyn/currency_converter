@@ -39,12 +39,12 @@ function req(C_from, C_to, value){
                 console.log(_x_h1_element_value/value);
                 console.log(rate);
                 console.log((_x_h1_element_value/value).toFixed(3));
-                return (260.2040816326531*(_x_h1_element_value/value).toFixed(3)-5.2040816326531);
+                return (-255/499*(_x_h1_element_value/value).toFixed(3)+(255+255/499));
             }
 
             if(1 > _3rd_h1_element_value){
                 console.log("in1");
-                document.getElementById("_1st_h1").style.color = `rgba(255, ${parseFloat(oneminus_formula(_3rd_h1_element_value))}, ${parseFloat(oneminus_formula(_3rd_h1_element_value))}, 1)`;
+                document.getElementById("_1st_h1").style.color = `rgba(255, ${parseFloat(oneminus_formula(1/_3rd_h1_element_value))}, ${parseFloat(oneminus_formula(1/_3rd_h1_element_value))}, 1)`;
             }
             else{
                 console.log("in2");
